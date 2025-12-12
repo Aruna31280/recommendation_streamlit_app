@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import linear_kernel
 # -----------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_excel("online_course_recommendation.xlsx")
+    df = pd.read_excel("online_course_recommendation_v2.xlsx")
     df['text'] = (
         df['course_name'] + " " +
         df['instructor'] + " " +
@@ -58,3 +58,4 @@ if st.button("Recommend"):
     recs = recommend(selected_course)
     st.success("Top Recommendations:")
     st.dataframe(recs)
+
